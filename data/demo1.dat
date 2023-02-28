@@ -1,0 +1,12 @@
+#ENV["GKSwstype"] = "100"
+# export GKSwstype="100"
+ENV:GKSwstype 100
+Cell:A cell_1.dat                # Catalyst input data
+CellEvents:cellEvents.dat        # contains all predefined cell events
+ModelEvents:modelEvents.dat      # contains all predefined model events
+Events:A updateGrowth{updateGrowth(growthLimit=0.01,fraction=0.66)} 
+Events:model updateNutrient{updateNutrient()}      
+Events:model cellCount{modelCellCount()}      # events attached to model
+Initialise:demo2.cells.dat             # contains the initial cells
+Output:./demo_1 demo
+nCycles:400000

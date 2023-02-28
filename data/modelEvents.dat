@@ -1,0 +1,35 @@
+Events
+ModelEvent:cellCount
+#data:cellCountFile(String) = ./cell_demo_1/cell_count.csv
+data:cellCountFile(String) = cell_count.csv
+data:cellCount(Int64) = [0]
+data:timeStep(Int64) = [0]
+test:updateEvent__
+execute:updateCellCount
+save:saveCellCount
+ModelEvent:cellCount_2
+#data:cellCountFile(String) = ./cell_demo_2/cell_count.csv
+data:cellCountFile(String) = cell_count.csv
+data:cellCount(Int64) = [0]
+data:timeStep(Int64) = [0]
+test:updateEvent__
+execute:updateCellCount
+save:saveCellCount
+
+ModelEvent:modelCellCount
+data:cellCountA(Int64) = [0]
+data:cellCountB(Int64) = [0]
+data:timeStepA(Int64) = [0]
+data:timeStepB(Int64) = [0]
+#test:updateEvent__
+save:saveModelCellCount
+execute:demoModelCellCount
+# demo 2
+ModelEvent:updateNutrient
+data:cellCount(Int32) = 1
+data:nutrient(Float64) = 1000.0
+data:remainingNutrient(Float64) = 0.0
+data:product(Symbol) = s_i
+#test:hasCellDivided
+execute:updateNutrient
+end

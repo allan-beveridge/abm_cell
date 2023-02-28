@@ -1,0 +1,5 @@
+#flag	type	value	default	required
+-run	string	*	none: cell	r
+-cpus	int	*	1: 1,2	r
+-i	file	*	none:*	r
+-o	file	*	none:*	r

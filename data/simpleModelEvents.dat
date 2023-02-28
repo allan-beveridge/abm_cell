@@ -1,0 +1,13 @@
+Events
+#ModelEvent:cellCount
+#data:cellCount(Int64) = [0]
+#data:timeStep(Int64) = [0]
+#test:updateEvent__
+#execute:updateCellCount
+#save:saveCellCount
+ModelEvent:divideCells
+data:cellCount(Int64) = 1
+test:alwaysUpdate
+execute:divideCells
+save:dontSave
+end

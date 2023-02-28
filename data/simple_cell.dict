@@ -1,0 +1,6 @@
+length ( Float64 )
+position(Tuple{ Float64 , Float64})
+length(Float64)
+orientation(Float64)
+growthprog(Float64)
+growthrate(Float64)

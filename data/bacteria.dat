@@ -1,0 +1,10 @@
+#Dictionary:SimpleCell simple_cell.dict
+Cell:SimpleCell simple_cell.dict
+#Cell:B cell_2.dat
+CellEvents:simpleCellEvents.dat
+ModelEvents:simpleModelEvents.dat
+Events:SimpleCell moveCell{move()}
+#Events:B e4, e5, e6
+Events:model divide{divideCells()}
+Initialise:simple_cells.dat
+Output:test_bacteria demo

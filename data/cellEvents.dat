@@ -1,0 +1,62 @@
+Events
+CellEvent:divideByTime
+data:nutrient(Float64) = 0.00005
+data:maxSteps(Int64) = 50
+data:fraction(Float64) = 0.5
+test:timeToDivide
+execute:divide_cell
+#save:modelDummy__
+save:do_nothing
+CellEvent:divideByTime_2
+data:nutrient(Float64) = 0.00010
+data:maxSteps(Int64) = 50
+data:fraction(Float64) = 0.5
+test:timeToDivide
+execute:divide_cell
+save:modelDummy__
+CellEvent:divideByNutrient
+data:nutrient(Float64) = 0.00005;nSteps(Int64) = 20
+test:timeToDivide
+execute:divide_cell
+save:dummySave
+copy
+CellEvent:updateNutrients
+data:nutrient(Float64) = 0.001
+test:updateEvent__
+execute:update_nutrients
+#save:modelDummy__
+save:do_nothing
+copy
+CellEvent:countCells
+#data:labelList(Vector{String}) = ["A","B"]
+data:cellCountA(Int64) = 1
+data:cellCountB(Int64) = 1
+data:previousTimeStep(Int64) = 0
+data:currentTimeStep(Int64) = 0
+data:timeStepListA(Int64) = [0]
+data:timeStepListB(Int64) = [0]
+data:cellCountListA(Int64) = [1]
+data:cellCountListB(Int64) = [1]
+execute:countCells
+save:saveCellCounts
+global
+# ======= demo 2
+CellEvent:updateGrowth
+data:growthLimit(Float64) = 0.01
+data:fraction(Float64) = 0.65
+data:growthProg(Float64) = 0.0
+data:growthIncrease(Float64) = 0.0
+#equation:growthRateEqn = ((c_q + c_m + c_t + c_r) * (gmax*a/(Kgamma + a)))/M
+equation:growthRateEqn = ((c_q + c_m + c_t + c_r) * (γ_max*a/(K_γ + a)))/M
+#test:alwaysUpdate
+test:checkGrowth
+#execute:calculateGrowth
+execute:divideByGrowth
+save:dontSave
+#CellEvent:divideByGrowth
+#test:checkGrowth
+#execute:divideByGrowth
+#data:growthLimit(Float64) = 1.0
+end
+
+
