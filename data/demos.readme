@@ -1,0 +1,35 @@
+
+
+Demo 1
+
+julia cell_demo.jl -demo demo1
+
+output: demo_1
+
+This will run a demo which has no events. It runs the integration until a steady state gas been reached
+
+
+Demo 2
+
+julia cell_demo.jl -demo demo2
+
+This will run a demo which has an event which calculates the growth of a cell. When the cell has grown a specified amount the cell divides
+
+output:demo2_0.01_1000
+
+
+Other Demos
+
+I modified the Agents bacgteria example to save the output to a data frame.
+
+Everything else is the same. The code (SimpleCell.jl) is in a separate directory, misc.
+
+julia SimpleCell.jl
+
+will run this demo.  The output is placed in a sub directory:bacteria
+
+I reorganised the the Agents 'bacteria' example to use 'events'. The code for the (bacteria.jl) is in the 'code' sub directory
+
+julia bacteria.jl
+
+will run the program, the output is in: bacteria
